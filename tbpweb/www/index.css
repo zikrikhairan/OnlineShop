@@ -1,0 +1,480 @@
+
+
+	<style type="text/css">
+		#XMLID_34_{
+			border-radius: 50%;
+			-webkit-transition:-webkit-transform .8s ease-in-out;
+			transition:transform .8s ease-in-out;
+		}
+		#XMLID_34_:hover{
+			-webkit-transform:translate(2,5);
+			transform:translate(2,5);
+		}
+		#XMLID_1_{
+			border-radius: -50%;
+			-webkit-transition:-webkit-transform .8s ease-in-out;
+			transition:transform .8s ease-in-out;
+		}
+		#XMLID_1_:hover{
+			-webkit-transform:rotate(360deg);
+			transform:rotate(360deg);
+		}
+		#XMLID_6_{
+			border-radius: -50%;
+			-webkit-transition:-webkit-transform .8s ease-in-out;
+			transition:transform .8s ease-in-out;
+		}
+		#XMLID_6_:hover{
+			-webkit-transform:rotate(360deg);
+			transform:rotate(360deg);
+		}
+		#XMLID_9_{
+			border-radius: -50%;
+			-webkit-transition:-webkit-transform .8s ease-in-out;
+			transition:transform .8s ease-in-out;
+		}
+		#XMLID_9_:hover{
+			-webkit-transform:rotate(360deg);
+			transform:rotate(360deg);
+		}
+		#XMLID_3_{
+			position: absolute;
+			transition: transform 1s;
+			-webkit-transition:-webkit-transform 1s;
+			transform-style: preserve-3d;
+		}
+		#XMLID_3_:hover{
+			-webkit-transform:rotateY(180deg);
+			transform:rotateY(180deg);
+		}
+		#XMLID_10_{
+			transition: transform 1s;
+			-webkit-transition:-webkit-transform 1s;
+			transform-style: preserve-3d;
+		}
+		#XMLID_10_:hover{
+			-webkit-transform:rotateY(180deg);
+			transform:rotateY(180deg);
+		}
+	</style>
+	
+#pilihanadmin, #inputbarang, #tabeltransaksi, #updatebarang{
+	display: none;
+}
+body {
+    background-color: lightblue;
+}
+.flip3D{ width:100px; height:100px; margin:2px; float:left; }
+.flip3D > .front{
+	position:absolute;
+	-webkit-transform: perspective( 100px ) rotateY( 0deg );
+	transform: perspective( 100px ) rotateY( 0deg );
+	background:#FC0; width:100px; height:100px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D > .back{
+	position:absolute;
+	-webkit-transform: perspective( 100px ) rotateY( 180deg );
+	transform: perspective( 100px ) rotateY( 180deg );
+	background: #80BFFF; width:100px; height:100px; border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover > .front{
+	-webkit-transform: perspective( 100px ) rotateY( -180deg );
+	transform: perspective( 100px ) rotateY( -180deg );
+}
+.flip3D:hover > .back{
+	-webkit-transform: perspective( 100px ) rotateY( 0deg );
+	transform: perspective( 100px ) rotateY( 0deg );
+}
+#slider{
+	opacity: 0;
+	-webkit-transition: opacity 1.0s linear;
+	transition: opacity 1.0s linear;
+	color: red;
+}
+.flip{
+	width: 100%
+}
+var slide=0;
+var slide_elem=document.getElementById("slider")
+var slide_array=["Cepat", "Hemat", "Gak Ribet"];
+function slideNext(){
+	slide++;
+	slide_elem.style.opacity = 0;
+	if(slide>(slide_array.length-1)){
+		slide=0
+	}
+	setTimeout('slideSlide()', 1000)
+}
+function slideSlide(){
+	slide_elem.innerHTML= slide_array[slide];
+	slide_elem.style.opacity=1;
+	setTimeout('slideNext()', 2000)
+}
+slideSlide();
+slideNext();
+.gambar{
+	width: 100px;
+	height: 100px;
+}
+.gambarbesar{
+	position: absolute;
+	width: 0px;
+	-webkit-transition:width 0.3s linear 0s;
+	transition:width 0.3s linear 0s;
+	z-index: 10;
+}
+.gambar:hover + .gambarbesar{
+	width: 300px;
+	height: 300px;
+}
+div#welcome{
+	width: 100%;
+	height: 200px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+div#welcome >#welcome_backdrop{
+	position: relative;
+	background: url(img/repeat.jpg) repeat-x;
+	width: 3960px;
+	height: 200px;
+	-webkit-animation: backdrop_roll linear 20s infinite;
+	animation: backdrop_roll linear 20s infinite;
+}
+@-webkit-keyframes backdrop_roll{
+	from{right: 0px}
+	to{right: 2000px}
+}
+@keyframes backdrop_roll{
+	from{right: 0px}
+	to{right: 2000px}
+}
+div#welcome > #welcome_content{
+	position: relative;
+	width: 96%;
+	height: 160px;
+	margin: 10px auto;
+	top: -200px;
+	color: #FFF;
+	font-size: auto;  
+}
+#tabel{
+	border: 2px;
+}
+.listmenu{
+	margin-top: -5px;
+	margin-left: -30px;
+}
+
+#list{
+	background-color: #D0D0D0;
+	margin-left: -15%;
+}
+#tampilanadmin, #tampilanpelanggan, #register {
+	display: none;
+}
+#masukkanketerangan{
+	height: 100px;
+}
+#masukkannama, #masukkanharga, #masukkanstok,#masukkantipe, #masukkanberat, #masukkanpanjang, #masukkanlebar, #masukkantinggi, #masukkanketerangan, #masukkantag{
+	width :100%;
+}
+#buttonregister{
+	font-size: 15px;
+}
+body{
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	width: 100%
+}
+input[type="text"], input[type="password"], input[type="textarea"]{
+	height: 30px;
+	font-size: 20px;
+	font-family: "MV Boli" ;
+}
+select{
+	height: 30px;
+	font-size: 20px;
+	font-family: "Haettenschweiler" ;
+}
+#pencarian{
+	width: 100%;
+}
+#buttonlogin{
+	font-size: 20px;
+}
+#username, #password{
+	text-align: center;
+}
+#welcome{
+	color: blue;
+	text-align: center;
+	background-color: black;
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: 50px;
+}
+#datatidakditemukan{
+	font-size: 20px;
+	background-color: blue;
+	display: none;	
+}
+#namapelanggan, #alamatpelanggan, #nomorpelanggan, #kota{
+	width: 100%;
+}
+
+#kembali, #kirim, #datapelanggan{
+	display: none;
+}
+#menu ul {
+	width: 140px;
+	display: fixed;
+	background-color: green;
+	opacity: 0.8;
+	margin: 0;
+	padding: 0;
+}
+#menu li{
+	display: fixed;
+	width: 100%;
+	height: auto;
+	color: darkblue;
+	font-family: helvetica;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 30px;
+	text-align: left;
+	/*border-bottom: 1px solid #fff;*/
+}
+#menu li:hover{
+	background: -webkit-linear-gradient(orange, #FFF);
+	background: -moz-linear-gradient(orange, #FFF);
+	background: -ms-linear-gradient(orange, #FFF);
+	width: 106px;
+}
+#menu li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+h1{
+	font-family: helvetica;
+	color: #8fcb8f
+}
+#makanandanminuman, #perlengkapanrumahtangga, #perawatantubuh,#mainan, #alatalattulis{
+	display: none;
+}
+
+#makanandanminuman ul{
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-left: -10%;
+	background-color: #D0D0D0;
+	vertical-align: text-top;
+}
+#makanandanminuman li{
+	list-style: none;
+	width: 100%;
+	font-size: 15px;
+	padding: 5px;
+	text-align: left;
+}
+#makanandanminuman li:hover{
+	background: #ff4500;
+	width: 116px;
+}
+#makanandanminuman li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+#perlengkapanrumahtangga div{
+	height: 14px;
+    margin-top: -4px;
+}
+#perlengkapanrumahtangga ul{
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-left: -10%;
+	background-color: #D0D0D0;
+	vertical-align: top;
+}
+#perlengkapanrumahtangga li{
+	list-style: none;
+	width: 100%;
+	font-size: 15px;
+	padding: 4px;
+	text-align: left;
+}
+#perlengkapanrumahtangga li:hover{
+	background: #ff4500;
+	width: 116px;
+}
+#perlengkapanrumahtangga li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+
+#perawatantubuh ul{
+	background-color: #D0D0D0;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-left: -10%;
+}
+#perawatantubuh li{
+	list-style: none;
+	width: 100%;
+	padding: 4px;
+	font-size: 15px;
+	text-align: left;
+}
+#perawatantubuh li:hover{
+	background: #ff4500;
+	width: 116px;
+}
+#perawatantubuh li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+
+#mainan ul{
+	background-color: #D0D0D0;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-left: -10%;
+}
+#mainan li{
+	list-style: none;
+	width: 100%;
+	padding: 4px;
+	font-size: 15px;
+	text-align: left;
+}
+#mainan li:hover{
+	background: #ff4500;
+	width: 116px;
+}
+#mainan li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+
+#alatalattulis ul{
+	background-color: #D0D0D0;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	margin-left: -10%;
+}
+#alatalattulis li{
+	list-style: none;
+	width: 100%;
+	padding: 4px;
+	font-size: 15px;
+	text-align: left;
+}
+#alatalattulis li:hover{
+	background: #ff4500;
+	width: 116px;
+}
+#alatalattulis li{
+	-webkit-transition:all .9s ease;
+	-moz-transition:all .9s ease;
+	-ms-transition:all .9s ease;
+	transition:all .9s ease;
+}
+
+.btn,
+#submit {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 5px 15px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    font-size: 1em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+    border-bottom: 3px solid #000
+}
+.btn:hover,
+.btn:focus {
+    color: #333;
+    text-decoration: none
+}
+.btn:active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+    color: #fff;
+    background-color: #47a447;
+    border-color: #398439
+}
+.btn-success:active {
+    background-image: none
+}
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+    color: #fff;
+    background-color: #39b3d7;
+    border-color: #269abc
+}
+.btn-info:active {
+    background-image: none
+}
+@media (max-width: 600px){
+	body{
+		width: 100%;
+	}
+}
+@media(min-width: 400px) and (max-width: 800px){
+	#welcome{
+		background-color: green;
+	}
+}

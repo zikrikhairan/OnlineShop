@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Citra Swalayan</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<style type="text/css"></style>
+	</head>
+	<body style="overflow-x:hidden">
+		<div id="login" align="center" style="margin-top:10%;margin-bottom:auto;">
+			<h3>Login</h3>
+			<input type="text" id="username" text-align="center"><br><br>
+			<input type="text" id="password"><br><br>
+			<button id="buttonlogin" class="btn btn-success btn-large"> Login</button><br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			&nbsp&nbsp&nbsp&nbsp<a href="#" id="buttonregister" >belum punya akun?</a>
+		</div>
+		<div id="tampilanadmin" align="center" style="margin-top:10%;margin-bottom:auto;">
+			<h3>Tampilan Admin</h3>
+			<div align="center" id="pilihanadmin">
+				<button id="buttoninputbarang" class="btn btn-success btn-large"> Input Barang</button><br><br>
+				<button id="buttonupdatebarang" class="btn btn-success btn-large"> Update Barang</button><br><br>
+				<button id="buttonlihattransaksi" class="btn btn-success btn-large"> Transaksi Pelanggan</button><br><br>
+				<a href="#" id="kembalilogin" >Login</a>
+			</div>
+			<div id="inputbarang">
+				<table>
+					<tr><td>Nama :</td><td><input type="text" id="masukkannama"></td></tr>
+					<tr><td>Harga :</td><td><input type="text" id="masukkanharga"></td></tr>
+					<tr><td>Stok :</td><td><input type="text" id="masukkanstok"></td></tr>
+					<tr><td>Tipe :</td>	<td>
+						<select id="masukkantipe">
+							<option value = "0"></option>
+							<option value = "1">Makanan dan Minuman</option>
+							<option value = "2">Perawatan Tubuh</option>
+							<option value = "3">Perlengkapan Rumah Tangga</option>
+							<option value = "4">Mainan</option>
+							<option value = "5">Alat Tulis Kantor</option>
+						</select><br>
+					</td></tr>
+					<tr><td>Berat :</td><td><input type="text" id="masukkanberat"></td></tr>
+					<tr><td>Panjang :</td><td><input type="text" id="masukkanpanjang"></td></tr>
+					<tr><td>Lebar :</td><td><input type="text" id="masukkanlebar"></td></tr>
+					<tr><td>Tinggi :</td><td><input type="text" id="masukkantinggi"></td></tr>
+					<tr><td>Keterangan :</td><td><input type="textarea" id="masukkanketerangan"></td></tr>
+					<tr><td>Tag :</td><td><input type="text" id="masukkantag"></td></tr>
+					<tr><td></td><td>
+						<form method="post" id="fileinfo" name="fileinfo">
+					        <label>Select a file:</label><br>
+					        <input type="file" name="file" required />
+					        <button class="btn btn-success btn-large" id="masukkan">Inputkan</button>
+					    </form>
+				</table>
+				<a href="#" id="kembaliadmin" >Kembali</a><br>
+				<a href="#" id="kembalilogin2" >Login</a>
+			</div>
+			<div id="tabeltransaksi" style="width:100%">
+				<input type="text" id="caritransaksi" align="right"></input>
+				<button id="btnpencariantransaksi" class="btn btn-success btn-small">Cari</button>
+				<div id="tabeltransaksi3">
+					<table id="tabeltransaksi2" style="text-align:center; border:2px solid black; width=100% ">
+						
+					</table>	
+				</div>
+				<a href="#" id="kembaliadmin2" >Kembali</a><br>
+				<a href="#" id="kembalilogin3" >Login</a>
+				<button class="btn btn-success btn-large" id="updatetransaksi">Update Transaksi</button>
+			</div>
+			<div id="updatebarang" style="width:100%">
+				<button id="btntampilkansemuabarangupdate" class="btn btn-success btn-small">Tampilkan Semua barang</button>
+				<div id="updatebarang2">
+					<table id="tabelupdatebarang" style="text-align:center; border:2px solid black; width=100% "></table>	
+				</div>
+				<a href="#" id="kembaliadmin3" >Kembali</a><br>
+				<a href="#" id="kembalilogin5" >Login</a>
+				<button class="btn btn-success btn-large" id="btnupdatebarang">Update Barang</button>
+			</div>
+
+		</div>
+		<div id="register" align="center">
+			<h3>Register</h3>
+			<table align="center" style="text-align:center">
+				<tr><td>Username :<br><input type="text" id="registerusername" autofocus><br>Password :
+				<tr><td><input type="text" id="registerpassword"><br>Nama Lengkap :
+				<tr><td><input type="text" id="registernama"><br>Alamat :
+				<tr><td><input type="text" id="registeralamat"><br>Kecamatan :
+				<tr><td><input type="text" id="registerkecamatan"><br>No. Telepon :
+				<tr><td><input type="text" id="registerno_telepon"><br>
+			</table>
+			<button id="daftarkan" class="btn btn-success btn-large">Register</button>
+			<a href="#"id="kembalilogin4" >Kembali</a><br>
+		</div>
+		<div id="tampilanpelanggan" >
+			<div style="background-color:#D0D0D0;">
+				<div id = "welcome">
+					<div id="welcome_backdrop"></div>
+					<div id="welcome_content" >Selamat Datang di Citra Swalayan Online<br><span id="slider"></span></div>
+				</div>
+				<div align="right"><button id="keluar" class="btn btn-success btn-large">Keluar</button>
+				<table class="listmenu" style="overflow-x:hidden">
+					<td>
+						<div id="menu">
+							<ul>
+								<li id="makanan" value="1">Makanan dan <br>Minuman</li>
+								<li id="perawatan" value="2">Perawatan <br>Tubuh</li>
+								<li id="perlengkapan" value="3">Perlengkapan <br>Rumah Tangga</li>
+								<li id="main" value="4">Mainan</li>
+								<li id="alat" value="5">Alat Tulis <br>Kantor</li>
+							</ul>
+						</div>
+					</td>
+					<td style="width:10%;background-color:#D0D0D0;">
+					<td style="text-align:left;vertical-align:top;padding:0;width:100%" id="list" >
+						<div id="makanandanminuman">
+							<ul id="listmakanandanminuman">
+								<li id="libiskuit">Biskuit</li>
+								<li id="lisusu">Susu</li>
+								<li id="liminuman">Minuman</li>
+								<li id="lisnack">Snack</li>
+								<li id="libumbu">Bumbu</li>
+								<li id="lisembako">Sembako</li>
+								<li id="liroti">Roti</li>
+								<li id="libahankue">Bahan Kue</li>
+								<li id="lipermen">Permen</li>
+								<li id="licokelat">Cokelat</li>
+								<li id="limie">Mie</li>
+								<li id="lisarapan">Sarapan</li>
+								<li id="liminyakgoreng">Minyak Goreng</li>
+								<li id="lisirup">Sirup</li>
+								<li id="limakanandiawetkan">Makanan Diawetkan</li>
+								<li id="lirokok">Rokok</li>
+							</ul>
+						</div>
+						<div id="perawatantubuh"style="height:-500px;">
+							<ul>
+								<li id="liperawatanrambut">Perawatan Rambut</li>
+								<li id="liperawatantubuh">Perawatan Tubuh</li>
+								<li id="liperawatankulit">Perawatan Kulit</li>
+								<li id="liperawatangigi">Perawatan Gigi</li>
+								<li id="likosmetik">Kosmetik</li>
+								<li id="liobatobatan">Obat-obatan</li>
+
+							</ul>
+						</div>
+						<div id="perlengkapanrumahtangga">
+							<ul>
+								<li id="liperlengkapanmelamin">Perlengkapan Melamin</li>
+								<li id="liperlengkapanplastik">Perlengkapan Plastik</li>
+								<li id="liperlengkapankaca">Perlengkapan Kaca</li>
+								<li id="liperalatanlistrik">Peralatan Listrik</li>
+								<li id="liperlengkapankebersihan">Perlengkapan Kebersihan</li>
+								<li id="liperlengkapandapur">Perlengkapan Dapur</li>
+								<li id="liperlengkapanmusiman">Perlengkapan Musiman</li>
+								<li id="litaskoper">Tas dan Koper</li>
+								<li id="lipajangan">Pajangan</li>
+								<li id="lipakaiandalam">Pakaian Dalam</li>
+							</ul>
+						</div>
+						<div id="mainan">
+							<ul>
+								<li id="limainanlembut">Mainan Lembut untuk Perempuan</li>
+								<li id="limainanlakilaki">Mainan untuk Laki-laki</li>
+								<li id="limainanperempuan">Mainan untuk Perempuan</li>
+								<li id="lipermainan">Permainan</li>
+								<li id="lipendidikan">Pendidikan</li>
+							</ul>
+						</div>
+						<div id="alatalattulis">
+							<ul>
+								<li id="lipensil">Pensil</li>
+								<li id="lipena">Pena</li>
+								<li id="lipenghapus">Penghapus</li>
+								<li id="libuku">Buku</li>
+								<li id="likertas">Kertas</li>
+								<li id="lialatkantor">Alat Kantor</li>
+							</ul>
+						</div>
+					</td>
+				</table>
+			</div>
+			<table style="width:100%;">
+				<div class="flip">
+					<div class="flip3D" style="width:30%">
+						<div class="back" style="background: url(img/listback.png);background-size:cover;"></div>
+						<div class="front" style="background: url(img/listfront.png);background-size:cover;"></div>
+					</div>
+					<div class="flip3D" style="width:30%">
+						<div class="back" style="background: url(img/delivback.png);background-size:cover;"></div>
+						<div class="front" style="background: url(img/delivfront.png);background-size:cover;"></div>
+					</div>
+					<div class="flip3D" style="width:30%">
+						<div class="back" style="background: url(img/receiveback.png);background-size:cover;"></div>
+						<div class="front" style="background: url(img/receivefront.png);background-size:cover;"></div>
+					</div>
+				</div>
+			</table>
+			<div id="pencarian">Pencarian berdasarkan :<br>
+				<table>
+					<tr style="width:100%;"><td style="width:40%;">
+						<select id="pilihanpencarian">
+							<option value = "0"></option>
+							<option value = "1">Nama</option>
+							<option value = "2">Keterangan</option>
+							<option value = "3">Tag</option>
+						</select>
+						</td>
+						<td style="width:60%;"><input type="search" id="carikata" align="right"></input></td>
+					</tr>
+					<tr><td colspan="2" align="right"><button id="btnpencarian" class="btn btn-success btn-small">Cari</button></td></tr>
+				</table>
+			</div>
+			<div id="listkotak" align="center">
+				<h2 id="datatidakditemukan"></h2>
+			</div>
+			<div id="pesanan">
+				<table id="tabel" style="border:2px solid"></table>
+			</div>
+			<div id="datapelanggan">
+				<table>
+					<tr>
+						<td>Nama:</td>
+						<td><input type="text" id="namapelanggan" class="pelanggan"></td>
+					</tr>
+					<tr>
+						<td>Alamat:</td>
+						<td><input type="textarea" id="alamatpelanggan" class="pelanggan"></td>
+					</tr>
+					<tr>
+						<td>No HP:</td>
+						<td><input type="text" id="nomorpelanggan" class="pelanggan"></td>
+					</tr>
+					<tr>
+						<td>Kota:</td>
+						<td>
+							<select id = "kota" class="pelanggan">
+								<option value = "0"></option>
+								<option value = "Padang Utara">Padang Utara</option>
+								<option value = "Padang Selatan">Padang Selatan</option>
+								<option value = "Padang Timur">Padang Timur</option>
+								<option value = "Padang Barat">Padang Barat</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<table align="right">
+				<tr>
+					<th>Rp. </th>
+					<th id="totalbelanja">0<th>
+					<th>
+						<button id="kembali" class="btn btn-success btn-large">Kembali</button>
+						<button id="kirimbarang" class="btn btn-success btn-large">Kirim Barang</button>
+						<button id="kirim" class="btn btn-success btn-large">Kirim</button>
+					</th>
+				</tr>
+			</table>
+			<div>
+				<button id="btndatatransaksipelanggan" align="center" style="width:100%;height:auto;margin-top:20px;text-align:center;" class="btn btn-success btn-large">Tampilkan Semua Pesanan <br> yang Pernah Dilakukan</button>
+				<div id="datatransaksipelanggan">
+					<table id="datatransaksipelanggan2"></table>
+				</div>
+			</div>
+		</div>
+		<div  style="height:auto; background-color:blue; color:white; margin-top:100px;" align="center">Copyright@2015 211421</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
